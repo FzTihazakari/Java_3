@@ -1,39 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<project>
-	<settings>
-		<label>Main</label>
-		<root_path>\</root_path>
-		<output_path>classes\</output_path>
-		<source_path>src\</source_path>
-		<jdkprofile_ref>JDK version 1.5.0</jdkprofile_ref>
-		<compiler_ref/>
-		<ant_ref/>
-	</settings>
-	<ant_events/>
-	<run_items/>
-	<runtimes>
-		<runtime>
-			<label>&lt;Default&gt;</label>
-			<application_ref/>
-			<applet_ref/>
-			<debugger_ref/>
-			<param/>
-			<run>Main</run>
-			<verify>true</verify>
-		</runtime>
-	</runtimes>
-	<libraries/>
-	<files>
-		<include>
-			<folderitem>
-				<path>src</path>
-			</folderitem>
-			<fileitem>
-				<path>src\Main.java</path>
-				<folder>src</folder>
-			</fileitem>
-		</include>
-	</files>
-	<tasks/>
-</project>
+import java.util.Scanner;
+class Main {
+    static void checkNumberRadius(double j){
+      //check if number is positive, negative or zero
+        if(j>0)
+            System.out.println(j + " is radius of cylinder.");
+        else if(j<0)
+            System.out.println(j + " Please Enter Positive Number.");
+        else
+            System.out.println(j + " is a ZERO.");
+    }
+
+    static void checkNumberHeight(double h){
+    	if(h>0)
+            System.out.println(h + " is height of cylinder.");
+        else if(h<0)
+            System.out.println(h + " Please Enter Positive Number.");
+        else
+            System.out.println(h + " is no Zero.");
+    }
+
+    static void volumeCylinder(double j, double h){
+
+    	//double pie = 3.14;
+    	double volume = 3.14*(j*j) *h;
+    	System.out.print("Volume of cylinder is " + volume);
+
+    }
+
+    public static void main( String[] args ) {
+        // create some number values
+
+        Scanner sc = new Scanner(System.in);
+		System.out.print("Radius = ");
+		double j = sc.nextDouble();
+		System.out.print("Height = ");
+		double h = sc.nextDouble();
+
+        // invoke function
+        checkNumberRadius(j);
+        checkNumberHeight(h);
+        //volumeCylinder(pie);
+        volumeCylinder(j,h);
+
+    }
+
+}
